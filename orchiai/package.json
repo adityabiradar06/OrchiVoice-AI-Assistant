@@ -1,0 +1,27 @@
+{
+  "name": "orchid-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node --env-file-if-exists=.env --watch backend/src/server.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "test": "node --test backend/test/*.test.js",
+    "start": "node --env-file-if-exists=.env backend/src/server.js"
+  },
+  "dependencies": {
+    "@designcodeio/threeui": "^1.2.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^5.4.11"
+  }
+}
